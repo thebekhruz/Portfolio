@@ -1,0 +1,40 @@
+.link-box {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .wall-left, .wall-right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #ccc;
+    z-index: 999;
+    transition: width 0.1s;
+  }
+  .wall-left {
+    left: 0;
+  }
+  .wall-right {
+    right: 0;
+  }
+  .link-box:hover .wall-left {
+    width: 50%;
+  }
+  .link-box:hover .wall-right {
+    width: 50%;
+  }
+  .wall-left::before, .wall-right::before {
+    content: "Under Development";
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+  .link-box:hover .wall-left::before, .link-box:hover .wall-right::before {
+    opacity: 1;
+  }
